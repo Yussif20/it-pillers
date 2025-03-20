@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     />
+    <!-- Add Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <title>IT Pillars Inspired Website</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -39,7 +44,7 @@
         Your browser does not support the video tag.
       </video>
       <div class="overlay"></div>
-      <div class="hero-content container">
+      <div class="container hero-content">
         <h1>DELIVERING IT WITH PASSION!</h1>
         <p>
           IT Pillars are here for your business to provide it with great ITSM
@@ -128,7 +133,9 @@
 
     <!-- Why Choose Us Section -->
     <section class="why-choose">
-      <div class="overlay"></div>
+      <div class="why-choose-bg">
+        <div class="overlay"></div>
+      </div>
       <div class="container">
         <h2>WHY I CHOOSE IT PILLARS?</h2>
         <p>
@@ -147,12 +154,33 @@
     <section class="clients">
       <div class="container">
         <h2>Our Clients</h2>
-        <div class="clients-slider">
-          <div class="client-logo">Logo 1</div>
-          <div class="client-logo">Logo 2</div>
-          <div class="client-logo">Logo 3</div>
-          <div class="client-logo">Logo 4</div>
-          <div class="client-logo">Logo 5</div>
+        <div class="swiper clients-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/Almarai.jpg" alt="Almarai Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/gea.png" alt="GEA Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/KSMC.jpg" alt="KSMC Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/LCGPA.jpg" alt="LCGPA Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/NADEC.jpg" alt="NADEC Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/ntis.jpg" alt="ntis Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/Salama.jpg" alt="Salama Logo" />
+            </div>
+            <div class="swiper-slide client-logo">
+              <img src="assets/clients/solutions.jpg" alt="solutions Logo" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -189,5 +217,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
