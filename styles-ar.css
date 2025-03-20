@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alexandria', sans-serif;
+  direction: rtl; /* Right-to-left direction */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  padding: 20px 0;
+  background: transparent;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav .lang {
+  color: #fff;
+}
+
+.quote-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.quote-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Services */
+.services {
+  background: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  padding: 20px;
+  text-align: right; /* RTL adjustment */
+}
+
+.service-card .icon {
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.service-card ul {
+  list-style: disc;
+  padding-right: 20px; /* RTL adjustment */
+}
+
+.service-card li {
+  margin-bottom: 10px;
+}
+
+/* Why Choose Us */
+.why-choose {
+  position: relative;
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+  background: url('background.jpg') no-repeat center/cover;
+}
+
+.why-choose .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.why-choose h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.why-choose p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Clients */
+.clients {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.clients h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.clients-slider {
+  display: flex;
+  gap: 40px;
+  overflow: hidden;
+  animation: slide 10s infinite linear;
+}
+
+.client-logo {
+  width: 100px;
+  height: 50px;
+  background: #ddd;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  } /* RTL adjustment */
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-column {
+  text-align: right; /* RTL adjustment */
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-column a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.subscribe-form input {
+  padding: 10px;
+  border: none;
+  flex-grow: 1;
+}
+
+.subscribe-form button {
+  padding: 10px 20px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
