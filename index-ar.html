@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.png" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     />
-    <title>آي تي بيلرز - موقع مستوحى</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>موقع مستوحى من IT Pillars</title>
     <link rel="stylesheet" href="styles-ar.css" />
   </head>
   <body>
@@ -15,10 +20,15 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <img src="assets/logo.webp" alt="logo" />
+          <img src="assets/logo.webp" alt="شعار" />
         </div>
+        <button class="burger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="nav">
-          <a href="#">الرئيسية</a>
+          <a href="#" class="active">الرئيسية</a>
           <a href="#">من نحن</a>
           <a href="#">الخدمات</a>
           <a href="#">الحلول</a>
@@ -26,6 +36,7 @@
           <a href="#">المدونة</a>
           <a href="#">اتصل بنا</a>
           <a href="index.html" class="lang">العربية - English</a>
+          <a href="#" class="mobile-quote-btn">احصل على عرض سعر</a>
         </nav>
         <a href="#" class="quote-btn">احصل على عرض سعر</a>
       </div>
@@ -34,14 +45,18 @@
     <!-- Hero Section -->
     <section class="hero">
       <video autoplay muted loop class="hero-video">
-        <source src="assets/video-loop.mp4" type="video/mp4" />
+        <source src="assets/hero-cover.mp4" type="video/mp4" />
         متصفحك لا يدعم تشغيل الفيديو.
       </video>
       <div class="overlay"></div>
-      <div class="hero-content">
-        <h1>تمكين أعمالك</h1>
-        <p>تقديم حلول تكنولوجية مبتكرة مصممة خصيصًا لاحتياجاتك.</p>
-        <a href="#" class="hero-btn">اعرف المزيد</a>
+      <div class="container hero-content">
+        <h1>نقدم خدمات تكنولوجيا المعلومات بحماس!</h1>
+        <p>
+          نحن في IT Pillars هنا لدعم عملك من خلال توفير حلول ITSM رائعة لتعزيزه،
+          وزيادة الوعي بالأحداث الأمنية، والحفاظ على الامتثال، وأيضًا أتمتة
+          وتجميع دورة حياة أصول تكنولوجيا المعلومات بالكامل.
+        </p>
+        <a href="#contact-us" class="hero-btn">احصل على استشارة مجانية</a>
       </div>
     </section>
 
@@ -51,26 +66,32 @@
         <h2>خدماتنا</h2>
         <div class="services-grid">
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>تطوير المواقع</h3>
+            <div class="icon">
+              <img src="assets/icons/cloud.png" alt="صورة السحابة" />
+            </div>
+            <h3>أداء الشبكة</h3>
             <ul>
-              <li>مواقع مخصصة</li>
-              <li>تصميم متجاوب</li>
-              <li>تحسين محركات البحث</li>
+              <li>إدارة تكوين الشبكة</li>
+              <li>تحليل حركة المرور ومراقبة النطاق الترددي</li>
+              <li>إدارة منافذ التبديل وعناوين IP</li>
             </ul>
           </div>
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>حلول السحابة</h3>
+            <div class="icon">
+              <img src="assets/icons/log.png" alt="صورة السجل" />
+            </div>
+            <h3>تحليل السجلات والأمان</h3>
             <ul>
-              <li>بنية تحتية قابلة للتوسع</li>
+              <li>بنية تحتية قابلة للتطوير</li>
               <li>أمان البيانات</li>
               <li>دعم على مدار الساعة</li>
             </ul>
           </div>
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>الأمن السيبراني</h3>
+            <div class="icon">
+              <img src="assets/icons/directory.png" alt="دليل" />
+            </div>
+            <h3>الدليل النشط</h3>
             <ul>
               <li>كشف التهديدات</li>
               <li>تقييم المخاطر</li>
@@ -78,30 +99,36 @@
             </ul>
           </div>
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>الاستشارات التقنية</h3>
+            <div class="icon">
+              <img src="assets/icons/desktop.png" alt="صورة سطح المكتب" />
+            </div>
+            <h3>إدارة سطح المكتب</h3>
             <ul>
-              <li>تخطيط الاستراتيجيات</li>
-              <li>تدقيق تقني</li>
+              <li>تخطيط الاستراتيجية</li>
+              <li>تدقيق التكنولوجيا</li>
               <li>التنفيذ</li>
             </ul>
           </div>
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>تطوير التطبيقات</h3>
+            <div class="icon">
+              <img src="assets/icons/it.png" alt="خدمة تكنولوجيا المعلومات" />
+            </div>
+            <h3>مكتب مساعدة تكنولوجيا المعلومات</h3>
             <ul>
-              <li>تطبيقات الهاتف</li>
+              <li>تطبيقات الهاتف المحمول</li>
               <li>متعدد المنصات</li>
-              <li>تصميم واجهة المستخدم</li>
+              <li>تصميم واجهة المستخدم/تجربة المستخدم</li>
             </ul>
           </div>
           <div class="service-card">
-            <div class="icon">أيقونة</div>
-            <h3>خدمات الدعم</h3>
+            <div class="icon">
+              <img src="assets/icons/app.png" alt="صورة التطبيق" />
+            </div>
+            <h3>التطبيقات</h3>
             <ul>
               <li>مكتب المساعدة</li>
               <li>الصيانة</li>
-              <li>التحديثات</li>
+              <li>الترقيات</li>
             </ul>
           </div>
         </div>
@@ -110,24 +137,19 @@
 
     <!-- Why Choose Us Section -->
     <section class="why-choose">
-      <div class="overlay"></div>
-      <div class="container">
-        <h2>لماذا تختارنا</h2>
-        <p>نقدم حلولًا متطورة مع نهج يركز على العميل أولاً.</p>
+      <div class="why-choose-bg">
+        <div class="overlay"></div>
       </div>
-    </section>
-
-    <!-- Our Clients Section -->
-    <section class="clients">
       <div class="container">
-        <h2>عملاؤنا</h2>
-        <div class="clients-slider">
-          <div class="client-logo">شعار 1</div>
-          <div class="client-logo">شعار 2</div>
-          <div class="client-logo">شعار 3</div>
-          <div class="client-logo">شعار 4</div>
-          <div class="client-logo">شعار 5</div>
-        </div>
+        <h2>لماذا أختار IT Pillars؟</h2>
+        <p>
+          IT Pillars هي شركة تكنولوجيا معلومات تأسست في عام 2010 وتتخصص في تقديم
+          برامج ManageEngine للشركات الكبيرة والصغيرة في المملكة العربية
+          السعودية. نحن نسعى أيضًا لمساعدة عملائنا بأفضل الحلول التكنولوجية
+          والخدمات الاحترافية مثل التنفيذ، التدريب، الاستشارات في تكنولوجيا
+          المعلومات، والدعم.
+        </p>
+        <p>لذا فهي خيار رائع لعملك.</p>
       </div>
     </section>
 
@@ -136,24 +158,24 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-column">
-            <h3>من نحن</h3>
-            <a href="#">قصتنا</a>
-            <a href="#">الفريق</a>
-            <a href="#">وظائف</a>
+            <h3>الخدمات</h3>
+            <a href="#">ManageEngine</a>
+            <a href="#">نظام تشغيل ZOHO</a>
+            <a href="#">نظام CRM</a>
           </div>
           <div class="footer-column">
-            <h3>الخدمات</h3>
-            <a href="#">تطوير المواقع</a>
+            <h3>معلومات</h3>
+            <a href="#">تطوير الويب</a>
             <a href="#">حلول السحابة</a>
             <a href="#">الأمن السيبراني</a>
           </div>
           <div class="footer-column">
-            <h3>الموارد</h3>
+            <h3>الشركة</h3>
             <a href="#">المدونة</a>
             <a href="#">الأسئلة الشائعة</a>
             <a href="#">الدعم</a>
           </div>
-          <div class="footer-column">
+          <div class="footer-column footer-subscribe">
             <h3>اشترك</h3>
             <form class="subscribe-form">
               <input type="email" placeholder="بريدك الإلكتروني" />
@@ -163,5 +185,16 @@
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript for Burger Menu -->
+    <script>
+      const burgerBtn = document.querySelector('.burger-btn');
+      const nav = document.querySelector('.nav');
+
+      burgerBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burgerBtn.classList.toggle('open');
+      });
+    </script>
   </body>
 </html>

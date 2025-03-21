@@ -29,6 +29,7 @@
 
 body {
   overflow-x: hidden;
+  direction: ltr;
 }
 
 .container {
@@ -55,6 +56,39 @@ body {
 
 .logo img {
   max-height: 50px;
+}
+
+/* Burger Menu Button */
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 25px;
+  background: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.burger-btn span {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.burger-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav {
@@ -86,12 +120,16 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 16px;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .quote-btn:hover {
   background: rgba(255, 255, 255, 0.8);
   color: #000;
+}
+
+.nav .mobile-quote-btn {
+  display: none;
 }
 
 /* Hero */
@@ -137,6 +175,7 @@ body {
 }
 
 .hero-btn {
+  display: inline-block;
   font-size: 26px;
   padding: 12px 30px;
   background: var(--primary-color);
@@ -145,6 +184,7 @@ body {
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 .hero-btn:hover {
@@ -167,8 +207,19 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Base for responsiveness */
   gap: 30px;
+  max-width: 1200px; /* Optional: limits total width */
+  margin: 0 auto; /* Centers the grid */
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* Max 3 columns on large screens */
+  }
 }
 
 .service-card {
@@ -256,36 +307,6 @@ body {
   color: #8a8a8a;
 }
 
-/* Clients */
-.clients {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.clients h2 {
-  color: #8a8a8a;
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-.clients-slider {
-  width: 100%;
-}
-
-.client-logo {
-  width: 120px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.client-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 /* Footer */
 .footer {
   background: #313e43;
@@ -295,16 +316,17 @@ body {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
 }
 
 .footer-column h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 20px;
 }
 
 .footer-column a {
+  font-size: 18px;
   display: block;
   color: #ccc;
   text-decoration: none;
@@ -313,56 +335,123 @@ body {
 
 .subscribe-form {
   display: flex;
+  background-color: #333333;
+  font-size: 24px;
 }
 
 .subscribe-form input {
-  padding: 10px;
+  outline: none;
+  padding: 20px;
   border: none;
   flex-grow: 1;
 }
 
 .subscribe-form button {
-  padding: 10px 20px;
-  background: #fff;
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
   border: none;
   cursor: pointer;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header .container {
-    flex-direction: column;
-    gap: 20px;
+  .burger-btn {
+    display: flex;
   }
+
   .nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    z-index: 9;
   }
-  .hero {
-    justify-content: center;
-    text-align: center;
+
+  .nav.active {
+    display: flex;
   }
-  .hero-content {
-    padding: 0 20px;
+
+  .nav a {
+    color: #000;
+    font-size: 24px;
+    margin: 10px 0;
   }
-  .services-grid {
-    grid-template-columns: 1fr;
+
+  .nav .lang {
+    color: #000;
   }
-  .client-logo {
-    width: 90px;
-    height: 45px;
+
+  .quote-btn {
+    display: none;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+
+  .nav .mobile-quote-btn {
+    display: block;
+    font-size: 24px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 16px;
+    margin: 10px 0;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .nav .mobile-quote-btn:hover {
+    background: white;
+    color: var(--primary-color);
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .hero-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .why-choose .container {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .client-logo {
-    width: 70px;
-    height: 35px;
+  .hero-content h1 {
+    font-size: 28px;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .service-card {
+    text-align: center;
+  }
+
+  .services h2,
+  .why-choose h2 {
+    font-size: 28px;
+  }
+
+  .footer {
+    text-align: center;
   }
 }

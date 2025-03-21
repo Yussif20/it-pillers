@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     />
-    <!-- Add Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -21,8 +20,13 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <img src="assets/logo.webp" alt="logo" />
+          <img src="assets/logo.webp" alt="Logo" />
         </div>
+        <button class="burger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="nav">
           <a href="#" class="active">Home</a>
           <a href="#">About</a>
@@ -32,6 +36,7 @@
           <a href="#">Blog</a>
           <a href="#">Contact</a>
           <a href="index-ar.html" class="lang">English - العربية</a>
+          <a href="#" class="mobile-quote-btn">Get a Quote</a>
         </nav>
         <a href="#" class="quote-btn">Get a Quote</a>
       </div>
@@ -63,7 +68,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/cloud.png" alt="cloud image" />
+              <img src="assets/icons/cloud.png" alt="Cloud image" />
             </div>
             <h3>NETWORK PERFORMANCE</h3>
             <ul>
@@ -74,7 +79,7 @@
           </div>
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/log.png" alt="log image" />
+              <img src="assets/icons/log.png" alt="Log image" />
             </div>
             <h3>Log Analysis & Security</h3>
             <ul>
@@ -85,7 +90,7 @@
           </div>
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/directory.png" alt="directory" />
+              <img src="assets/icons/directory.png" alt="Directory" />
             </div>
             <h3>Active Directory</h3>
             <ul>
@@ -96,7 +101,7 @@
           </div>
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/desktop.png" alt="desktop image" />
+              <img src="assets/icons/desktop.png" alt="Desktop image" />
             </div>
             <h3>Desktop Management</h3>
             <ul>
@@ -107,7 +112,7 @@
           </div>
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/it.png" alt="it service" />
+              <img src="assets/icons/it.png" alt="IT service" />
             </div>
             <h3>IT Help Desk</h3>
             <ul>
@@ -118,7 +123,7 @@
           </div>
           <div class="service-card">
             <div class="icon">
-              <img src="assets/icons/app.png" alt="app image" />
+              <img src="assets/icons/app.png" alt="App image" />
             </div>
             <h3>Application</h3>
             <ul>
@@ -137,7 +142,7 @@
         <div class="overlay"></div>
       </div>
       <div class="container">
-        <h2>WHY I CHOOSE IT PILLARS?</h2>
+        <h2>WHY CHOOSE IT PILLARS?</h2>
         <p>
           IT Pillars is an information technology company that was founded in
           2010 and specializes in providing ManageEngine’s software programs to
@@ -150,64 +155,29 @@
       </div>
     </section>
 
-    <!-- Our Clients Section -->
-    <section class="clients">
-      <div class="container">
-        <h2>Our Clients</h2>
-        <div class="swiper clients-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/Almarai.jpg" alt="Almarai Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/gea.png" alt="GEA Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/KSMC.jpg" alt="KSMC Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/LCGPA.jpg" alt="LCGPA Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/NADEC.jpg" alt="NADEC Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/ntis.jpg" alt="ntis Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/Salama.jpg" alt="Salama Logo" />
-            </div>
-            <div class="swiper-slide client-logo">
-              <img src="assets/clients/solutions.jpg" alt="solutions Logo" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-column">
-            <h3>About Us</h3>
-            <a href="#">Our Story</a>
-            <a href="#">Team</a>
-            <a href="#">Careers</a>
+            <h3>SERVICES</h3>
+            <a href="#">ManageEngine</a>
+            <a href="#">ZOHO Operating System</a>
+            <a href="#">CRM System</a>
           </div>
           <div class="footer-column">
-            <h3>Services</h3>
+            <h3>Information</h3>
             <a href="#">Web Development</a>
             <a href="#">Cloud Solutions</a>
             <a href="#">Cybersecurity</a>
           </div>
           <div class="footer-column">
-            <h3>Resources</h3>
+            <h3>Company</h3>
             <a href="#">Blog</a>
             <a href="#">FAQ</a>
             <a href="#">Support</a>
           </div>
-          <div class="footer-column">
+          <div class="footer-column footer-subscribe">
             <h3>Subscribe</h3>
             <form class="subscribe-form">
               <input type="email" placeholder="Your Email" />
@@ -218,7 +188,15 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <!-- JavaScript for Burger Menu -->
+    <script>
+      const burgerBtn = document.querySelector('.burger-btn');
+      const nav = document.querySelector('.nav');
+
+      burgerBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burgerBtn.classList.toggle('open');
+      });
+    </script>
   </body>
 </html>
